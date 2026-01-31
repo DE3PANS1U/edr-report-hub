@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDR Report Hub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Interactive Avatar -->
+        <div class="avatar-container">
+            <div class="robot-face" id="robotFace">
+                <div class="robot-antenna"></div>
+                <div class="robot-ear left"></div>
+                <div class="robot-ear right"></div>
+                <div class="eye">
+                    <div class="pupil" id="pupilLeft"></div>
+                </div>
+                <div class="eye">
+                    <div class="pupil" id="pupilRight"></div>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <header>
+                <div class="creator-badge">Made with ❤️ by Deepanshu Patel</div>
+                <h1>EDR Report Hub</h1>
+                <p class="subtitle">Transform Excel data into professional PowerPoint reports automatically</p>
+            </header>
+
+            <!-- Upload Section -->
+            <div class="upload-section" id="uploadSection">
+                <div class="upload-wrapper">
+                    <div class="upload-box" id="uploadBox">
+                        <div class="upload-icon">📂</div>
+                        <div class="upload-text">
+                            <h2>Initialize Data Upload</h2>
+                            <p>Drag critical excel file or click to browse</p>
+                        </div>
+                        <input type="file" id="fileInput" accept=".xlsx,.xls" hidden>
+                        <button class="btn-primary" id="browseBtn">Select Source File</button>
+                        <div class="file-info" id="fileInfo"></div>
+                    </div>
+
+                    <div class="info-panel">
+                        <h3>⚡ System Requirements</h3>
+                        <ul class="info-list">
+                            <li><strong>Entity</strong> <span>Client Code</span></li>
+                            <li><strong>Alert Trend</strong> <span>Time Stamp</span></li>
+                            <li><strong>Filename</strong> <span>Source Artifact</span></li>
+                            <li><strong>Alert Severity</strong> <span>Risk Level</span></li>
+                            <li><strong>Alert Status</strong> <span>State</span></li>
+                            <li><strong>Alert Efficiency</strong> <span>Classification</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Section -->
+            <div class="progress-section hidden" id="progressSection">
+                <div class="progress-box">
+                    <div class="spinner-tech"></div>
+                    <h2>Processing Data Stream</h2>
+                    <p id="progressText">Initializing analysis...</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success Section -->
+            <div class="success-section hidden" id="successSection">
+                <div class="progress-box">
+                    <div class="upload-icon">🛡️</div>
+                    <h2>Report Generated</h2>
+                    <p id="successMessage">Analysis complete. Secure download ready.</p>
+                    <button class="btn-success" id="downloadBtn">Download Secure Report</button>
+                    <br><br>
+                    <button class="btn-secondary" id="newReportBtn">New Analysis</button>
+                </div>
+            </div>
+
+            <!-- Error Section -->
+            <div class="error-section hidden" id="errorSection">
+                <div class="progress-box">
+                    <div class="upload-icon">⚠️</div>
+                    <h2>System Error</h2>
+                    <p id="errorMessage"></p>
+                    <button class="btn-secondary" id="retryBtn">Retry Operation</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Copyright reserved to Deepanshu Patel</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
